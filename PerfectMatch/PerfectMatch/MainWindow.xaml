@@ -6,19 +6,19 @@
         xmlns:local="clr-namespace:PerfectMatch"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="-18,0,18.2,-0.2">
         <TextBlock HorizontalAlignment="Left" Margin="371,10,0,0" TextWrapping="Wrap" Text="Perfect Match" VerticalAlignment="Top"/>
         <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="288,216,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="First Name&#xD;&#xA;" HorizontalAlignment="Left" Margin="43,80,0,0" VerticalAlignment="Top" Width="69"/>
         <Label Content="Gender&#xD;&#xA;" HorizontalAlignment="Left" Margin="43,111,0,0" VerticalAlignment="Top"/>
-        <Label Content="Hometown&#xD;&#xA;" HorizontalAlignment="Left" Margin="43,153,0,0" VerticalAlignment="Top"/>
+        <Label Content="Home State&#xA;" HorizontalAlignment="Left" Margin="43,153,0,0" VerticalAlignment="Top"/>
         <Label Content="Phone Number" HorizontalAlignment="Left" Margin="363,79,0,0" VerticalAlignment="Top"/>
         <Label Content="Height" HorizontalAlignment="Left" Margin="373,124,0,0" VerticalAlignment="Top"/>
         <Label Content="Age" HorizontalAlignment="Left" Margin="380,155,0,0" VerticalAlignment="Top" Height="57" Width="32"/>
         <Label Content="" HorizontalAlignment="Left" Margin="373,172,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="170,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtGender" HorizontalAlignment="Left" Height="23" Margin="170,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtHometown" HorizontalAlignment="Left" Height="23" Margin="170,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtHomeState" HorizontalAlignment="Left" Height="23" Margin="170,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="23" Margin="490,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtHeight" HorizontalAlignment="Left" Height="23" Margin="490,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="490,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
