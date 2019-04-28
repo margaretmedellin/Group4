@@ -23,10 +23,27 @@ namespace PerfectMatch
     {
 
         List<UserInfo> user = new List<UserInfo>();
+        DB_128040_group4Entities dataEntities = new DB_128040_group4Entities();
+
 
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void DataGrideMatches_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void BtnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnFindMatch_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
