@@ -10,36 +10,38 @@ namespace PerfectMatch
     {
         public string FirstName { get; set; }
         public string Gender { get; set; }
-        public string Hometown { get; set; }
-        public double Height { get; set; }
+        public string HomeState { get; set; }
+        public string University { get; set; }
         public int Age { get; set; }
-        public int Phone { get; set; }
+        public string Phone { get; set; }
+        //public LocalDataStoreSlot DB_128040_group4Entities<UserInfo1_> dB {get;}
+
 
         public UserInfo()
         {
             FirstName = "";
             Gender = "";
-            Hometown = "";
-            Height = 0.0;
+            HomeState = "";
+            University = "";
+            Phone = "";
             Age = 0;
-            Phone = 0;
+
         }
-        public UserInfo(string firstName, string gender, string hometown, double height, int age, int phone)
+        public UserInfo(string firstName, string gender, string hometown, string university, int age, string phone)
         {
             FirstName = firstName;
             Gender = gender;
-            Hometown = hometown;
-            Height = height;
-            Age = age;
+            HomeState = hometown;
+            University = university;
             Phone = phone;
+            Age = age;
         }
-        public override string ToString()
-        {
-            //creates an output of string 
-            string UserAsString = $"{FirstName} {Gender} {Height} is {Age} and is from {Hometown}. {FirstName}'s phone number is {Phone}.";
+        ////public override string ToString()
+        //{
+        //    //creates an output of string 
+        //    string UserAsString = $"{FirstName} {Gender} is {Age} and is from {HomeState}. {FirstName} currently attends {University} {FirstName}'s phone number is {Phone}.";
 
-            return UserAsString;
-        }
-
+        //    return UserAsString;
+        //}
     }
 }

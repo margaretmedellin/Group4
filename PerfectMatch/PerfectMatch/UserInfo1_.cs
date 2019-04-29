@@ -11,7 +11,7 @@ namespace PerfectMatch
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class UserInfo1_
     {
         public string HomeState { get; set; }
@@ -20,5 +20,26 @@ namespace PerfectMatch
         public string University { get; set; }
         public string Gender { get; set; }
         public int Age { get; set; }
+
+
+        public UserInfo1_()
+        {
+            FirstName = "";
+            Gender = "";
+            HomeState = "";
+            University = "";
+            Phone = "";
+            Age = 0;
+
+        }
+        public UserInfo1_(string firstName, string gender, string hometown, string university, int age, string phone)
+        {
+            FirstName = firstName;
+            Gender = gender;
+            HomeState = hometown;
+            University = university;
+            Phone = phone;
+            Age = age;
+        }
     }
 }

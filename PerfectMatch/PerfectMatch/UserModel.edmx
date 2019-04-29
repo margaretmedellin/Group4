@@ -9,9 +9,9 @@
 warning 6002: The table/view 'DB_128040_group4.dbo.UserInfo1$' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="UserInfo1$">
           <Key>
-            <PropertyRef Name="Age" />
+            <PropertyRef Name="HomeState" />
           </Key>
-          <Property Name="HomeState" Type="varchar" MaxLength="255" />
+          <Property Name="HomeState" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="FirstName" Type="varchar" MaxLength="255" />
           <Property Name="Phone" Type="varchar" MaxLength="50" />
           <Property Name="University" Type="varchar" MaxLength="255" />
@@ -37,9 +37,9 @@ warning 6002: The table/view 'DB_128040_group4.dbo.UserInfo1$' does not have a p
       <Schema Namespace="DB_128040_group4Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="UserInfo1_">
           <Key>
-            <PropertyRef Name="Age" />
+            <PropertyRef Name="HomeState" />
           </Key>
-          <Property Name="HomeState" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="HomeState" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="University" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
