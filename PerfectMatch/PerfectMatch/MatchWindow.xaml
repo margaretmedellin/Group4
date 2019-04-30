@@ -1,0 +1,27 @@
+﻿<Window x:Class="PerfectMatch.MatchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PerfectMatch"
+        mc:Ignorable="d"
+        Title="MatchWindow" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="lblname" Content="" HorizontalAlignment="Left" Margin="187,125,0,0" VerticalAlignment="Top" BorderBrush="#FFFC4DCF" Foreground="#FFE2CF6D"/>
+        <Label Content="YOUR MATCH" HorizontalAlignment="Left" Margin="344,22,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="185" Margin="272,69,0,0" VerticalAlignment="Top" Width="226"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="187,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="187,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="First Name" HorizontalAlignment="Left" Margin="121,262,0,0" VerticalAlignment="Top"/>
+        <Label Content="Age:" HorizontalAlignment="Left" Margin="121,320,0,0" VerticalAlignment="Top"/>
+        <Label Content="Gender: " HorizontalAlignment="Left" Margin="121,390,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="187,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="517,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="University:" HorizontalAlignment="Left" Margin="413,259,0,0" VerticalAlignment="Top"/>
+        <Label Content="Hometown: " HorizontalAlignment="Left" Margin="413,323,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="517,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Contact: " HorizontalAlignment="Left" Margin="413,390,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="517,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

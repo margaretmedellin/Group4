@@ -5,29 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PerfectMatch"
         mc:Ignorable="d"
-        Title="PerfectMatch" Height="450" Width="800" >
+        Title="PerfectMatch" Height="450" Width="800" Loaded="Window_Loaded">
     <Window.Resources>
-        <local:DB_128040_group4DataSet x:Key="dB_128040_group4DataSet"/>
-        <CollectionViewSource x:Key="_UserInfo1_ViewSource" Source="{Binding _UserInfo1_, Source={StaticResource dB_128040_group4DataSet}}"/>
+
     </Window.Resources>
-    <Grid DataContext="{StaticResource _UserInfo1_ViewSource}">
+    <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="371,10,0,0" TextWrapping="Wrap" Text="Perfect Match" VerticalAlignment="Top"/>
         <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="309,190,0,0" VerticalAlignment="Top" Width="75" Click="BtnSubmit_Click" />
         <Label Content="" HorizontalAlignment="Left" Margin="394,146,0,0" VerticalAlignment="Top"/>
         <Label Content="Your Matches:" HorizontalAlignment="Left" Margin="43,258,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtMatch" HorizontalAlignment="Left" Height="22" Margin="511,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtMatch" HorizontalAlignment="Left" Height="46" Margin="511,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="If you want  to meet one of your matches,&#xD;&#xA; please type their name below to display their number." HorizontalAlignment="Left" Margin="428,248,0,0" VerticalAlignment="Top" Height="56" Width="334"/>
         <Button x:Name="btnFindMatch" Content="Find Match" HorizontalAlignment="Left" Margin="654,354,0,0" VerticalAlignment="Top" Width="75" />
-        <DataGrid x:Name="_UserInfo1_DataGrid" AutoGenerateColumns="True" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="22,258,411.2,14.8" RowDetailsVisibilityMode="VisibleWhenSelected" Loaded="BtnSubmit_Click"  >
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="homeStateColumn" Binding="{Binding HomeState}" Header="Home State" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="First Name" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="phoneColumn" Binding="{Binding Phone}" Header="Phone" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="universityColumn" Binding="{Binding University}" Header="University" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="genderColumn" Binding="{Binding Gender}" Header="Gender" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="ageColumn" Binding="{Binding Age}" Header="Age" Width="SizeToHeader"/>
-            </DataGrid.Columns>
-        </DataGrid>
         <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="58,61,0,0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25.4"/>
@@ -45,9 +34,7 @@
             </Grid.RowDefinitions>
             <Label Content="Home State:" Grid.Column="0" HorizontalAlignment="Left" Margin="-10,2,0,0" Grid.Row="0" VerticalAlignment="Center" Height="30" Width="83" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
             <TextBox x:Name="homeStateTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3.4,4,-0.2,4" Grid.Row="0" Text="{Binding HomeState,Mode=TwoWay}" VerticalAlignment="Center" Width="120" Grid.RowSpan="2">
-                <TextBox.DataContext>
-                    <local:UserInfo1_/>
-                </TextBox.DataContext>
+
                 <TextBox.BindingGroup>
                     <BindingGroup/>
                 </TextBox.BindingGroup>
@@ -63,6 +50,9 @@
             <Label Content="Age:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="6" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
             <TextBox x:Name="ageTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3.4,4,-0.2,4" Grid.Row="6" Text="{Binding Age, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         </Grid>
+        <ListBox x:Name="lstMatches" HorizontalAlignment="Left" Height="100" Margin="95,300,0,0" VerticalAlignment="Top" Width="218" MouseDoubleClick="LstMatches_MouseDoubleClick"/>
+        <TextBox x:Name="urlprofile" HorizontalAlignment="Left" Height="24" Margin="385,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
+        <Label Content="Enter URL to upload a profile picture!" HorizontalAlignment="Left" Margin="352,43,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

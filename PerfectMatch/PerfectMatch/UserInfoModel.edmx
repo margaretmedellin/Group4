@@ -5,49 +5,42 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="DB_128040_group4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'DB_128040_group4.dbo.UserInfo1$' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="UserInfo1$">
+        <EntityType Name="UserInfo">
           <Key>
-            <PropertyRef Name="HomeState" />
+            <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="HomeState" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="varchar" MaxLength="255" />
-          <Property Name="Phone" Type="varchar" MaxLength="50" />
-          <Property Name="University" Type="varchar" MaxLength="255" />
           <Property Name="Gender" Type="varchar" MaxLength="255" />
           <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="HomeState" Type="varchar" MaxLength="255" />
+          <Property Name="University" Type="varchar" MaxLength="255" />
+          <Property Name="ProfilePic" Type="nvarchar(max)" />
         </EntityType>
         <EntityContainer Name="DB_128040_group4ModelStoreContainer">
-          <EntitySet Name="UserInfo1$" EntityType="Self.UserInfo1$" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [UserInfo1$].[HomeState] AS [HomeState], 
-    [UserInfo1$].[FirstName] AS [FirstName], 
-    [UserInfo1$].[Phone] AS [Phone], 
-    [UserInfo1$].[University] AS [University], 
-    [UserInfo1$].[Gender] AS [Gender], 
-    [UserInfo1$].[Age] AS [Age]
-    FROM [dbo].[UserInfo1$] AS [UserInfo1$]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DB_128040_group4Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="UserInfo1_">
+        <EntityType Name="UserInfo">
           <Key>
-            <PropertyRef Name="HomeState" />
+            <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="HomeState" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="University" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Gender" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HomeState" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="University" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProfilePic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="DB_128040_group4Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="UserInfo1_" EntityType="Self.UserInfo1_" />
+          <EntitySet Name="UserInfoes" EntityType="Self.UserInfo" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -55,15 +48,17 @@ warning 6002: The table/view 'DB_128040_group4.dbo.UserInfo1$' does not have a p
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DB_128040_group4ModelStoreContainer" CdmEntityContainer="DB_128040_group4Entities">
-          <EntitySetMapping Name="UserInfo1_">
-            <EntityTypeMapping TypeName="DB_128040_group4Model.UserInfo1_">
-              <MappingFragment StoreEntitySet="UserInfo1$">
-                <ScalarProperty Name="HomeState" ColumnName="HomeState" />
+          <EntitySetMapping Name="UserInfoes">
+            <EntityTypeMapping TypeName="DB_128040_group4Model.UserInfo">
+              <MappingFragment StoreEntitySet="UserInfo">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="University" ColumnName="University" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="HomeState" ColumnName="HomeState" />
+                <ScalarProperty Name="University" ColumnName="University" />
+                <ScalarProperty Name="ProfilePic" ColumnName="ProfilePic" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

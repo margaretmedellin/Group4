@@ -18,33 +18,40 @@ using System.Data.SqlClient;
 
 namespace PerfectMatch
 {
-   
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        //private const string V = "Data Source=tcp:s19.winhost.com;Initial Catalog=DB_128040_group4;User ID=DB_128040_group4_user;Password=Group4%;Integrated Security=False;";
-        DB_128040_group4DataSet db = new DB_128040_group4DataSet();
-       
-        bool flag = false;
+        bool match = false;
+        DB_128040_group4Entities db = new DB_128040_group4Entities();
+
+        UserInfo user = new UserInfo();
+
+
         public MainWindow()
         {
-            DB_128040_group4DataSet dB_128040_group4DataSet = (DB_128040_group4DataSet)FindResource("DB_128040_group4DataSet");
-            DB_128040_group4DataSetTableAdapters.UserInfo1_TableAdapter dB_128040_group4DataSetUserInfo1_TableAdapter = new DB_128040_group4DataSetTableAdapters.UserInfo1_TableAdapter();
-            dB_128040_group4DataSetUserInfo1_TableAdapter.Fill(dB_128040_group4DataSet._UserInfo1_);
             InitializeComponent();
-
-
-
         }
-
-
-
-
         public void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            string firstName, gender, homeState, phone, university;
+            CreateNewUser();
+
+            foreach (var u in db.UserInfoes)
+            {
+                if (user.Gender != u.Gender && user.HomeState == u.HomeState)
+                {
+                    lstMatches.Items.Add(u.FirstName + u.Age);
+
+                    match = true;
+                }
+            }
+        }
+
+        private void CreateNewUser()
+        {
+            string firstName, gender, homeState, phone, university, profilePic;
             int age;
 
             firstName = firstNameTextBox.Text;
@@ -52,85 +59,54 @@ namespace PerfectMatch
             homeState = homeStateTextBox.Text;
             university = universityTextBox.Text;
             phone = phoneTextBox.Text;
-           age = Convert.ToInt32(ageTextBox.Text);
-            //DB_128040_group4DataSet dB_128040_group4DataSet = (DB_128040_group4DataSet)FindResource("dB_128040_group4DataSet");
-            // DB_128040_group4DataSetTableAdapters.UserInfo1_TableAdapter dB_128040_group4DataSetUserInfo1_TableAdapter = new DB_128040_group4DataSetTableAdapters.UserInfo1_TableAdapter();
-            //dB_128040_group4DataSetUserInfo1_TableAdapter.Fill(dB_128040_group4DataSet._UserInfo1_);
-            string connectionString;
-            SqlConnection con;
-            connectionString= @"Data Source=tcp:s19.winhost.com;Initial Catalog=DB_128040_group4;User ID=DB_128040_group4_user;Password=Group4%;Integrated Security=False";
-            con = new SqlConnection(connectionString);
+            age = Convert.ToInt32(ageTextBox.Text);
+            profilePic = urlprofile.Text;
 
+            user.Age = age;
+            user.FirstName = firstName;
+            user.Gender = gender;
+            user.HomeState = homeState;
+            user.Phone = phone;
+            user.ProfilePic = profilePic;
 
+          //  db.UserInfoes.Add(user);
 
-
-            List<DB_128040_group4DataSet> listUserInputs = new List<DB_128040_group4DataSet>();
-            if (homeStateTextBox.Text==homeState)
-            {
-
-                CollectionViewSource _UserInfo1_ViewSource = (CollectionViewSource)FindResource("_UserInfo1_ViewSource");
-                _UserInfo1_ViewSource.View.MoveCurrentToFirst();
-            }
-
-            //SqlConnection con = new SqlConnection(connectionString);
-
-            //SqlCommand cmd = new SqlCommand();
-            //cmd.CommandText = "select*from[UserModel]";
-            //cmd.Connection = con;
-
-
-            //SqlDataReader rd = cmd.ExecuteReader();
-            //while (rd.Read())
-            //{
-            //    if (rd[1].ToString()==homeStateTextBox.Text)
-            //    {
-            //        flag = true;
-            //        MessageBox.Show($"{_UserInfo1_DataGrid}");
-            //        break;
-            //    }
-
-            //}
-            //if (flag==true)
-            //{
-
-            //}
-
-        }
-        }
-                
-   
-
-            
-            //var userInformation = db.UserInfo1_.Include(UI.FirstName);
-            //userInformation = db.UserInfo1_.Include(UI.Gender);
-            //userInformation = db.UserInfo1_.Include(UI.HomeState);
-            //userInformation = db.UserInfo1_.Include(UI.Phone);
-            //userInformation = db.UserInfo1_.Include(UI.University);
-            //        dataGridMatches.ItemsSource = user;
-            //        dataGridMatches.Items.Add(UI.FirstName);
-            //        dataGridMatches.Items.Add(UI.HomeState);
-            //        dataGridMatches.Items.Add(UI.Phone);
-            //        dataGridMatches.Items.Add(UI.Age);
-            //        dataGridMatches.Items.Add(UI.University);
-            //DB_128040_group4DataSet dB_128040_group4DataSet = (DB_128040_group4DataSet)FindResource("dB_128040_group4DataSet");
-            //DB_128040_group4DataSetTableAdapters.UserInfo1_TableAdapter dB_128040_group4DataSetUserInfo1_TableAdapter = new DB_128040_group4DataSetTableAdapters.UserInfo1_TableAdapter();
-            //dB_128040_group4DataSetUserInfo1_TableAdapter.Fill(dB_128040_group4DataSet._UserInfo1_);
-            // CollectionViewSource _UserInfo1_ViewSource = (CollectionViewSource)FindResource("_UserInfo1_ViewSource");
-            // _UserInfo1_ViewSource.View.MoveCurrentToFirst();
+           // db.SaveChanges();
         }
 
-  
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void LstMatches_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            //($"{lstMatches.SelectedItem} ");
+            MatchWindow window = new MatchWindow();
+            window.Show();
+
+        }
+    }
+    //var userInformation = db.UserInfo1_.Include(UI.FirstName);
+    //userInformation = db.UserInfo1_.Include(UI.Gender);
+    //userInformation = db.UserInfo1_.Include(UI.HomeState);
+    //userInformation = db.UserInfo1_.Include(UI.Phone);
+    //userInformation = db.UserInfo1_.Include(UI.University);
+    //        dataGridMatches.ItemsSource = user;
+    //        dataGridMatches.Items.Add(UI.FirstName);
+    //        dataGridMatches.Items.Add(UI.HomeState);
+    //        dataGridMatches.Items.Add(UI.Phone);
+    //        dataGridMatches.Items.Add(UI.Age);
+    //        dataGridMatches.Items.Add(UI.University);
+}
 
 
-        //PerfectMatch.DB_128040_group4DataSet dB_128040_group4DataSet = PerfectMatch.DB_128040_group4DataSet.FindResources("db_128040_group4DataSet"));
-        //// Load data into the table _UserInfo1_. 
-        //DB_128040_group4DataSetTableAdapters.UserInfo1_TableAdapter dB_128040_group4DataSetUserInfo1_TableAdapter = new DB_128040_group4DataSetTableAdapters.UserInfo1_TableAdapter();
-        //dB_128040_group4DataSetUserInfo1_TableAdapter.Fill(dB_128040_group4DataSet._UserInfo1_);
-        //CollectionViewSource _UserInfo1_ViewSource = (CollectionViewSource)FindResource("_UserInfo1_ViewSource");
-        //_UserInfo1_ViewSource.View.MoveCurrentToFirst();
-    
-    
-   
+
+
+
+
+
+
+
 
 
 

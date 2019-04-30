@@ -25,6 +25,6 @@ namespace PerfectMatch
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<UserInfo1_> UserInfo1_ { get; set; }
+        public virtual DbSet<UserInfo> UserInfoes { get; set; }
     }
 }
