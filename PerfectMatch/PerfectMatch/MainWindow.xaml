@@ -9,17 +9,23 @@
     <Window.Resources>
 
     </Window.Resources>
-    <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="371,10,0,0" TextWrapping="Wrap" Text="Perfect Match" VerticalAlignment="Top"/>
+    <Grid Background="#FFF2A4D1">
+        <TextBlock HorizontalAlignment="Left" Margin="280,10,0,0" TextWrapping="Wrap" Text="Perfect Match" VerticalAlignment="Top" FontFamily="Segoe Script" FontSize="24" Background="#FFE9CEDD" Height="33" Width="186">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF7AB1A9" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
         <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="309,190,0,0" VerticalAlignment="Top" Width="75" Click="BtnSubmit_Click" />
         <Label Content="" HorizontalAlignment="Left" Margin="394,146,0,0" VerticalAlignment="Top"/>
-        <Label Content="Your Matches:" HorizontalAlignment="Left" Margin="43,258,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtMatch" HorizontalAlignment="Left" Height="46" Margin="511,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="If you want  to meet one of your matches,&#xD;&#xA; please type their name below to display their number." HorizontalAlignment="Left" Margin="428,248,0,0" VerticalAlignment="Top" Height="56" Width="334"/>
-        <Button x:Name="btnFindMatch" Content="Find Match" HorizontalAlignment="Left" Margin="654,354,0,0" VerticalAlignment="Top" Width="75" />
+        <Label Content="Your Matches:" HorizontalAlignment="Left" Margin="43,258,0,0" VerticalAlignment="Top" FontFamily="Ink Free" FontWeight="Bold" FontSize="22" Background="#FFE697C4" Foreground="White"/>
+        <Label Content="If you want  to meet one of your matches,&#xA; just double click on their name to display their profile." HorizontalAlignment="Left" Margin="428,248,0,0" VerticalAlignment="Top" Height="57" Width="357" FontFamily="Segoe Print" Foreground="#FFF4FAEF" Background="#FFC395D1"/>
         <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="58,61,0,0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="25.4"/>
+                <ColumnDefinition Width="10.8"/>
+                <ColumnDefinition Width="14.8"/>
                 <ColumnDefinition Width="48.2"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
@@ -32,27 +38,27 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Content="Home State:" Grid.Column="0" HorizontalAlignment="Left" Margin="-10,2,0,0" Grid.Row="0" VerticalAlignment="Center" Height="30" Width="83" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="homeStateTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3.4,4,-0.2,4" Grid.Row="0" Text="{Binding HomeState,Mode=TwoWay}" VerticalAlignment="Center" Width="120" Grid.RowSpan="2">
+            <Label Content="Home State:" Grid.Column="0" HorizontalAlignment="Left" Margin="-10,2,0,0" VerticalAlignment="Center" Height="30" Width="83" Grid.ColumnSpan="3" Grid.RowSpan="2" Foreground="#FF171319" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+            <TextBox x:Name="homeStateTextBox" Grid.Column="3" HorizontalAlignment="Left" Height="24" Margin="3.4,4,-0.2,4" Grid.Row="0" Text="{Binding HomeState,Mode=TwoWay}" VerticalAlignment="Center" Width="120" Grid.RowSpan="2">
 
                 <TextBox.BindingGroup>
                     <BindingGroup/>
                 </TextBox.BindingGroup>
             </TextBox>
-            <Label Content="First Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="2" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="firstNameTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3.4,4,-0.2,4" Grid.Row="2" Text="{Binding FirstName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="Phone:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="3" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="phoneTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3.4,4,-0.2,4" Grid.Row="3" Text="{Binding Phone, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="University:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="4" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="universityTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3.4,4,-0.2,4" Grid.Row="4" Text="{Binding University, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="Gender:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="5" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="genderTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3.4,4,-0.2,4" Grid.Row="5" Text="{Binding Gender, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="Age:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="6" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="ageTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3.4,4,-0.2,4" Grid.Row="6" Text="{Binding Age, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="First Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="2" VerticalAlignment="Center" Grid.ColumnSpan="3" Foreground="#FF171319" FontWeight="Bold"/>
+            <TextBox x:Name="firstNameTextBox" Grid.Column="3" HorizontalAlignment="Left" Height="24" Margin="3.4,4,-0.2,4" Grid.Row="2" Text="{Binding FirstName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Phone:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,0,0,3" Grid.Row="3" VerticalAlignment="Bottom" Grid.ColumnSpan="3" Foreground="#FF171319" FontWeight="Bold"/>
+            <TextBox x:Name="phoneTextBox" Grid.Column="3" HorizontalAlignment="Left" Height="24" Margin="3.4,4,-0.2,4" Grid.Row="3" Text="{Binding Phone, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="University:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="4" VerticalAlignment="Center" Grid.ColumnSpan="3" Foreground="#FF171319" FontWeight="Bold"/>
+            <TextBox x:Name="universityTextBox" Grid.Column="3" HorizontalAlignment="Left" Height="24" Margin="3.4,4,-0.2,4" Grid.Row="4" Text="{Binding University, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Gender:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="5" VerticalAlignment="Center" Grid.ColumnSpan="3" Foreground="#FF171319" FontWeight="Bold"/>
+            <TextBox x:Name="genderTextBox" Grid.Column="3" HorizontalAlignment="Left" Height="24" Margin="3.4,4,-0.2,4" Grid.Row="5" Text="{Binding Gender, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Age:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="6" VerticalAlignment="Center" Grid.ColumnSpan="3" Foreground="#FF171319" FontWeight="Bold"/>
+            <TextBox x:Name="ageTextBox" Grid.Column="3" HorizontalAlignment="Left" Height="24" Margin="3.4,4,-0.2,4" Grid.Row="6" Text="{Binding Age, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         </Grid>
-        <ListBox x:Name="lstMatches" HorizontalAlignment="Left" Height="100" Margin="95,300,0,0" VerticalAlignment="Top" Width="218" MouseDoubleClick="LstMatches_MouseDoubleClick"/>
+        <ListBox x:Name="lstMatches" HorizontalAlignment="Left" Height="118" Margin="10,295,0,0" VerticalAlignment="Top" Width="775" MouseDoubleClick="LstMatches_MouseDoubleClick"/>
         <TextBox x:Name="urlprofile" HorizontalAlignment="Left" Height="24" Margin="385,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
-        <Label Content="Enter URL to upload a profile picture!" HorizontalAlignment="Left" Margin="352,43,0,0" VerticalAlignment="Top"/>
+        <Label Content="Enter URL to upload a profile picture!" HorizontalAlignment="Left" Margin="352,43,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" Foreground="#FF171319" FontWeight="Bold"/>
 
     </Grid>
 </Window>

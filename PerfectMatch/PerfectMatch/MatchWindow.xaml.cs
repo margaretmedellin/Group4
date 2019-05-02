@@ -22,6 +22,10 @@ namespace PerfectMatch
         public MatchWindow()
         {
             InitializeComponent();
+
+            //var uriSource = new Uri(@"/PerfectMatch;component/Images/download.png", UriKind.Relative);
+            //imgMatch.Source = new BitmapImage(uriSource);
         }
+
     }
 }

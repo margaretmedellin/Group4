@@ -34,7 +34,11 @@ namespace PerfectMatch
             University = "";
             ProfilePic = "";
         }
-        //public void UserInfo(string userInfo, string firstN)
+
+        public override string ToString()
+        {
+            return FirstName + " | " + Age + " | " + Gender + " | " + University + " | " + HomeState + " | ";
+        }
 
     }
 }

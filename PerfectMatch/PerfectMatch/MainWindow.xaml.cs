@@ -26,10 +26,7 @@ namespace PerfectMatch
     {
         bool match = false;
         DB_128040_group4Entities db = new DB_128040_group4Entities();
-
         UserInfo user = new UserInfo();
-
-
         public MainWindow()
         {
             InitializeComponent();
@@ -42,8 +39,7 @@ namespace PerfectMatch
             {
                 if (user.Gender != u.Gender && user.HomeState == u.HomeState)
                 {
-                    lstMatches.Items.Add(u.FirstName + u.Age);
-
+                    lstMatches.Items.Add(u);
                     match = true;
                 }
             }
@@ -80,24 +76,22 @@ namespace PerfectMatch
 
         private void LstMatches_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            //($"{lstMatches.SelectedItem} ");
-            MatchWindow window = new MatchWindow();
-            window.Show();
+          
+                MatchWindow window = new MatchWindow();
+            UserInfo u = (UserInfo)lstMatches.SelectedItem;
+            window.txtMatchName.Text = u.FirstName;
+            window.txtUniversity.Text = u.University;
+            window.txtHometown.Text = u.HomeState;
+            window.txtGender.Text = u.Gender;
+            window.txtContact.Text = u.Phone;
+            //u.Age = Convert.ToInt32(window.txtAge.);
+            //window.imgMatch.Source = u.ProfilePic;
 
+            window.Show();
+            }
         }
     }
-    //var userInformation = db.UserInfo1_.Include(UI.FirstName);
-    //userInformation = db.UserInfo1_.Include(UI.Gender);
-    //userInformation = db.UserInfo1_.Include(UI.HomeState);
-    //userInformation = db.UserInfo1_.Include(UI.Phone);
-    //userInformation = db.UserInfo1_.Include(UI.University);
-    //        dataGridMatches.ItemsSource = user;
-    //        dataGridMatches.Items.Add(UI.FirstName);
-    //        dataGridMatches.Items.Add(UI.HomeState);
-    //        dataGridMatches.Items.Add(UI.Phone);
-    //        dataGridMatches.Items.Add(UI.Age);
-    //        dataGridMatches.Items.Add(UI.University);
-}
+
 
 
 

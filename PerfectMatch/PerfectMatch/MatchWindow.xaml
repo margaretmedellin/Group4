@@ -6,22 +6,23 @@
         xmlns:local="clr-namespace:PerfectMatch"
         mc:Ignorable="d"
         Title="MatchWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFF8B7FF">
         <Label x:Name="lblname" Content="" HorizontalAlignment="Left" Margin="187,125,0,0" VerticalAlignment="Top" BorderBrush="#FFFC4DCF" Foreground="#FFE2CF6D"/>
-        <Label Content="YOUR MATCH" HorizontalAlignment="Left" Margin="344,22,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="185" Margin="272,69,0,0" VerticalAlignment="Top" Width="226"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="187,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="187,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="First Name" HorizontalAlignment="Left" Margin="121,262,0,0" VerticalAlignment="Top"/>
-        <Label Content="Age:" HorizontalAlignment="Left" Margin="121,320,0,0" VerticalAlignment="Top"/>
-        <Label Content="Gender: " HorizontalAlignment="Left" Margin="121,390,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="187,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="517,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="University:" HorizontalAlignment="Left" Margin="413,259,0,0" VerticalAlignment="Top"/>
-        <Label Content="Hometown: " HorizontalAlignment="Left" Margin="413,323,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="517,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Contact: " HorizontalAlignment="Left" Margin="413,390,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="517,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="YOUR MATCH" HorizontalAlignment="Left" Margin="302,10,0,0" VerticalAlignment="Top" FontFamily="Segoe Print" FontWeight="Bold" FontSize="24" Background="#00000000" Foreground="#FFF7FA57"/>
+        <Image x:Name="imgMatch" HorizontalAlignment="Left" Height="185" Margin="309,62,0,0" VerticalAlignment="Top" Width="179" Source="C:\Users\marga\OneDrive\Desktop\download.png"/>
+
+        <TextBox x:Name="txtMatchName" HorizontalAlignment="Left" Height="23" Margin="187,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="187,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="First Name" HorizontalAlignment="Left" Margin="104,257,0,0" VerticalAlignment="Top" FontFamily="Segoe Print"/>
+        <Label Content="Age:" HorizontalAlignment="Left" Margin="121,320,0,0" VerticalAlignment="Top" FontFamily="Segoe Print"/>
+        <Label Content="Gender: " HorizontalAlignment="Left" Margin="121,390,0,0" VerticalAlignment="Top" FontFamily="Segoe Print"/>
+        <TextBox x:Name="txtGender" HorizontalAlignment="Left" Height="23" Margin="187,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtUniversity" HorizontalAlignment="Left" Height="23" Margin="517,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="University:" HorizontalAlignment="Left" Margin="413,259,0,0" VerticalAlignment="Top" FontFamily="Segoe Print"/>
+        <Label Content="Hometown: " HorizontalAlignment="Left" Margin="413,323,0,0" VerticalAlignment="Top" FontFamily="Segoe Print"/>
+        <TextBox x:Name="txtHometown" HorizontalAlignment="Left" Height="23" Margin="517,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Contact: " HorizontalAlignment="Left" Margin="413,390,0,0" VerticalAlignment="Top" FontFamily="Segoe Print"/>
+        <TextBox x:Name="txtContact" HorizontalAlignment="Left" Height="23" Margin="517,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
